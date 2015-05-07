@@ -1,0 +1,43 @@
+<android.support.v4.widget.DrawerLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/drawer"
+  android:layout_height="match_parent"
+  android:layout_width="match_parent"
+  android:fitsSystemWindows="true"
+  tools:context=".MainActivity">
+
+  <!-- Content -->
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:elevation="10dp"
+      android:background="?attr/colorPrimary"
+      android:minHeight="?attr/actionBarSize">
+    </android.support.v7.widget.Toolbar>
+
+    <!--容纳Fragment的容器-->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+  </RelativeLayout>
+
+  <!-- Side Drawer -->
+  <!--侧边栏放Fragment-->
+  <fragment
+      android:id="@+id/navigation_drawer"
+      android:name="com.brainstorm.neckup.fragment.DrawerFragment"
+      android:layout_width="220dp"
+      android:layout_height="match_parent"
+      android:layout_gravity="start"
+      android:fitsSystemWindows="true"
+      tools:layout="@layout/fragment_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

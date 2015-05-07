@@ -1,0 +1,31 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="AppTheme.Base">
+  </style>
+
+  <style name="AppTheme.Base" parent="Theme.AppCompat">
+    <item name="windowActionBar">false</item>
+    <item name="android:windowNoTitle">true</item>
+
+    <!-- Actionbar color -->
+    <item name="colorPrimary">@color/accent_material_dark</item>
+    <!--Status bar color-->
+    <item name="colorPrimaryDark">@color/accent_material_light</item>
+    <!--Window color-->
+    <item name="android:windowBackground">@color/dim_foreground_material_dark</item>
+
+    <!--将新加入的风格 AppTheme.MyDrawerStyle 设定给 drawerArrowStyle 属性-->
+    <item name="drawerArrowStyle">@style/AppTheme.MyDrawerArrowStyle</item>
+
+  </style>
+
+  <!--加入一个新的 navigation drarwer 的风格-->
+  <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+    <!--將 spinBars 属性设定为 false-->
+    <item name="spinBars">false</item>
+    <!--设定 drawer arrow 颜色-->
+    <item name="color">@android:color/black</item>
+  </style>
+
+</resources>
