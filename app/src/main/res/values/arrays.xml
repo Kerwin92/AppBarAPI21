@@ -4,7 +4,6 @@
     <string-array name="nav_drawer_items">
         <item >"fragment0"</item>
         <item >"fragment1"</item>
-        <item >"fragment2"</item>
     </string-array>
 
 </resources>

@@ -33,7 +33,7 @@
   <!--侧边栏放Fragment-->
   <fragment
       android:id="@+id/navigation_drawer"
-      android:name="com.brainstorm.neckup.fragment.DrawerFragment"
+      android:name="com.example.appbar.fragment.DrawerFragment"
       android:layout_width="220dp"
       android:layout_height="match_parent"
       android:layout_gravity="start"

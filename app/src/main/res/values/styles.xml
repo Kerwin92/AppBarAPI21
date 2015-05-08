@@ -23,7 +23,7 @@
   <!--加入一个新的 navigation drarwer 的风格-->
   <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
     <!--將 spinBars 属性设定为 false-->
-    <item name="spinBars">false</item>
+    <item name="spinBars">true</item>
     <!--设定 drawer arrow 颜色-->
     <item name="color">@android:color/black</item>
   </style>
