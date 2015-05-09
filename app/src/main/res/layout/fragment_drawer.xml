@@ -4,33 +4,66 @@
     android:layout_width="220dp"
     android:layout_height="match_parent"
     android:layout_gravity="start"
+    android:background="@android:color/white"
     android:clickable="false"
-    android:background="@android:color/holo_blue_light"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/flyt_bar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent"></FrameLayout>
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/giraffe"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_blue_light"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn0"
+        <TextView
+            android:id="@+id/tv_cervical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="btn0"/>
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/giraffe"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="颈椎操"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
 
-        <Button
-            android:id="@+id/btn1"
+        <TextView
+            android:id="@+id/tv_record"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="btn1"/>
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/record"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="每日记录"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
+
+        <TextView
+            android:id="@+id/tv_health"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/health"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="我的健康"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -12,10 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-
-import com.example.appbar.activity.MainActivity;
+import android.widget.TextView;
 
 import com.example.appbar.R;
+import com.example.appbar.activity.MainActivity;
 
 public class DrawerFragment extends Fragment implements OnClickListener {
     private final String TAG = "DrawerFragment";
@@ -26,6 +26,7 @@ public class DrawerFragment extends Fragment implements OnClickListener {
     private ActionBarDrawerToggle mDrawerToggle;
     private NavigationDrawerCallbacks mCallbacks;
     private int mCurrentSelectedPosition = 0;
+    public static TextView tvCervical, tvRecord, tvHealth;
     /**
      * Remember the position of the selected item.
      */
@@ -58,10 +59,18 @@ public class DrawerFragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_drawer, container, false);
-        view.findViewById(R.id.btn0).setOnClickListener(this);
-        view.findViewById(R.id.btn1).setOnClickListener(this);
+        initView();
         context = getActivity();
         return view;
+    }
+
+    private void initView() {
+        tvCervical = (TextView) view.findViewById(R.id.tv_cervical);
+        tvRecord = (TextView) view.findViewById(R.id.tv_record);
+        tvHealth = (TextView) view.findViewById(R.id.tv_health);
+        tvCervical.setOnClickListener(this);
+        tvRecord.setOnClickListener(this);
+        tvHealth.setOnClickListener(this);
     }
 
     /**
@@ -98,7 +107,8 @@ public class DrawerFragment extends Fragment implements OnClickListener {
                 getActivity().invalidateOptionsMenu();
             }
         };
-
+        mDrawerToggle.syncState();
+        //        mDrawerToggle.setHomeAsUpIndicator(R.drawable.ab_android);
         // Defer code dependent on restoration of previous instance state.
         mDrawerLayout.post(new Runnable() {
             @Override
@@ -123,6 +133,7 @@ public class DrawerFragment extends Fragment implements OnClickListener {
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
+            /*监听到用户点击之后，在此处设置position，能调用到MainActivity中复写的此方法吗？？？*/
         }
     }
 
@@ -149,11 +160,14 @@ public class DrawerFragment extends Fragment implements OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn0:
+            case R.id.tv_cervical:
                 selectItem(mCurrentSelectedPosition = 0);
                 break;
-            case R.id.btn1:
+            case R.id.tv_record:
                 selectItem(mCurrentSelectedPosition = 1);
+                break;
+            case R.id.tv_health:
+                selectItem(mCurrentSelectedPosition = 2);
                 break;
             default:
                 break;
@@ -172,5 +186,4 @@ public class DrawerFragment extends Fragment implements OnClickListener {
         super.onResume();
         Log.i(TAG, "onResume");
     }
-
 }

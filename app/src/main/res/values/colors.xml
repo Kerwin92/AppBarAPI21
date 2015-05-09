@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--侧边栏点击后的蓝色-->
+    <color name="drawer_bule">#30adb8</color>
+    <!--透明色-->
+    <color name="transparent">#00000000</color>
+</resources>

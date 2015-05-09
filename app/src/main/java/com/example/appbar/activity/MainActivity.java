@@ -10,12 +10,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.example.appbar.fragment.DrawerFragment;
-import com.example.appbar.fragment.Fragment0;
-import com.example.appbar.fragment.Fragment1;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.appbar.R;
+import com.example.appbar.fragment.CervicalFragment;
+import com.example.appbar.fragment.DrawerFragment;
+import com.example.appbar.fragment.HealthFragment;
+import com.example.appbar.fragment.RecordFragment;
 
 
 public class MainActivity extends ActionBarActivity implements DrawerFragment.NavigationDrawerCallbacks {
@@ -24,6 +26,8 @@ public class MainActivity extends ActionBarActivity implements DrawerFragment.Na
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerFragment drawerFragment;
     private Fragment currentFragment, lastFragment;
+    private ImageView ivNavIcon;
+    private TextView tvNavTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,18 +35,20 @@ public class MainActivity extends ActionBarActivity implements DrawerFragment.Na
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setDrawerFragment();
-        toolbar.inflateMenu(R.menu.menu_main);
+        ivNavIcon = (ImageView) findViewById(R.id.iv_navIcon);
+        tvNavTitle = (TextView) findViewById(R.id.tv_navTitle);
+        //        toolbar.inflateMenu(R.menu.menu_main);
         setSupportActionBar(toolbar);
 
         // 打开 up bottom
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setDrawerFragment();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         // drawer toggle 并放入 toolbar
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         mDrawerToggle.syncState();
-
+        // Navigation Icon 要设定在 setSupoortActionBar 才有作用
+        toolbar.setNavigationIcon(R.drawable.ic_launcher);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
@@ -81,11 +87,28 @@ public class MainActivity extends ActionBarActivity implements DrawerFragment.Na
         if (currentFragment == null) {
             switch (position) {
                 case 0:
-                    currentFragment = new Fragment0();
+                    currentFragment = new CervicalFragment();
+                    DrawerFragment.tvCervical.setBackgroundColor(getResources().getColor(R.color.drawer_bule));
+                    DrawerFragment.tvRecord.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    DrawerFragment.tvHealth.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    ivNavIcon.setImageDrawable(getResources().getDrawable(R.drawable.giraffe));
+                    tvNavTitle.setText(R.string.cervical);
                     break;
                 case 1:
-                    currentFragment = new Fragment1();
+                    currentFragment = new RecordFragment();
+                    DrawerFragment.tvRecord.setBackgroundColor(getResources().getColor(R.color.drawer_bule));
+                    DrawerFragment.tvCervical.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    DrawerFragment.tvHealth.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    ivNavIcon.setImageDrawable(getResources().getDrawable(R.drawable.record));
+                    tvNavTitle.setText(R.string.record);
                     break;
+                case 2:
+                    currentFragment = new HealthFragment();
+                    DrawerFragment.tvHealth.setBackgroundColor(getResources().getColor(R.color.drawer_bule));
+                    DrawerFragment.tvRecord.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    DrawerFragment.tvCervical.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    ivNavIcon.setImageDrawable(getResources().getDrawable(R.drawable.health));
+                    tvNavTitle.setText(R.string.health);
                 default:
                     break;
             }
