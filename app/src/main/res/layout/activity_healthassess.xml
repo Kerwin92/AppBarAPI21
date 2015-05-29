@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/llyt_customization"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#ff4093c8">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="定制你的个性颈椎操"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/second_font_size"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_wanchengceshi"
+        style="@style/bottom_button_style"
+        android:text="提交"
+        />
+
+    <ListView
+        android:id="@+id/lv_custom_feeling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_wanchengceshi"
+        android:layout_below="@id/llyt_customization"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/white"
+        android:divider="@color/listview_divider"
+        android:dividerHeight="1dp"
+        android:fadeScrollbars="false"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"/>
+
+
+</RelativeLayout>

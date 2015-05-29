@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--侧边栏点击后的蓝色-->
-    <color name="drawer_bule">#30adb8</color>
+    <color name="light_blue">#30adb8</color>
     <!--透明色-->
     <color name="transparent">#00000000</color>
+    <!--radiobutton边线色-->
+    <color name="radiobutton_line">#009e96</color>
+    <!--深蓝色-->
+    <color name="darker_blue">#009e96</color>
+    <!--字体蓝-->
+    <color name="font_blue">#54b8f9</color>
+    <!--背景深灰-->
+    <color name="darker_gray_bkg">#434343</color>
+    <!--listview分割线-->
+    <color name="listview_divider">#f0f0f0</color>
+    <color name="blue">#4096c9</color>
+    <color name="text_gray">#808080</color>
+    <!--exRoundProgress-->
+    <color name="round_color">#ffd1d1d1</color>
+    <color name="round_progress_color">#ff5ec2cb</color>
 </resources>

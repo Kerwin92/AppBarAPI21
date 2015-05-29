@@ -23,28 +23,41 @@
         </android.support.v7.widget.Toolbar>
 
         <!--容纳Fragment的容器-->
-        <FrameLayout
-            android:id="@+id/container"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/white">
-
-            <ImageView
-                android:id="@+id/iv_navIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_launcher"/>
-
-            <TextView
-                android:id="@+id/tv_navTitle"
-                android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+            <!--这里界面取巧，没有直接设置toolbar的navigationIcon和title，转而利用Framlayout的控件覆盖顶部toolbar，暂未发现不响应点击的情况-->
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/second_font_size"
-                tools:text="测试标题"/>
-        </FrameLayout>
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tv_navTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/second_font_size"
+                    tools:text="测试标题"/>
+
+                <ImageView
+                    android:id="@+id/iv_navIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_launcher"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 
@@ -52,7 +65,7 @@
     <!--侧边栏放Fragment-->
     <fragment
         android:id="@+id/navigation_drawer"
-        android:name="com.example.appbar.fragment.DrawerFragment"
+        android:name="com.brainstorm.neckup.fragment.DrawerFragment"
         android:layout_width="220dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

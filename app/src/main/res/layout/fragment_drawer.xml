@@ -12,7 +12,8 @@
         android:id="@+id/iv_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/giraffe"/>
+        android:padding="8dp"
+        android:src="@drawable/toolbar_giraffe"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/giraffe"
+            android:drawableLeft="@drawable/giraffe_ic"
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
             android:paddingBottom="10dp"
@@ -40,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/record"
+            android:drawableLeft="@drawable/record_ic"
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
             android:paddingBottom="10dp"
@@ -55,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/health"
+            android:drawableLeft="@drawable/health_ic"
             android:drawablePadding="20dp"
             android:gravity="center_vertical"
             android:paddingBottom="10dp"

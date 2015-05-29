@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--toolbar 占位符-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_blue"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/flt_score_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <com.brainstorm.neckup.Utils.ScoreRoundProgressBar
+                android:id="@+id/score_round_progressBar"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_margin="20dp"
+                android:background="#ff30acb7"
+                android_custom:max="100"
+                android_custom:roundColor="#fffdfdfd"
+                android_custom:roundProgressColor="#fffd9072"
+                android_custom:roundWidth="10dp"
+                android_custom:textColor="#fffdfdfd"
+                android_custom:textIsDisplayable="true"
+                android_custom:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="90dp"
+                android:text="你的颈椎健康得分为"
+                android:textColor="#fffdfdfd"
+                android:textSize="14sp"/>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/flt_score_progress">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="您的颈椎正处于轻度劳损状态！及时锻炼"
+                android:textSize="14sp"
+                />
+
+            <Button
+                android:id="@+id/btn_reassess"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_resurvey"
+                android:text="我要重测"
+                android:textColor="#ff539fc3"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_assess_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</LinearLayout>

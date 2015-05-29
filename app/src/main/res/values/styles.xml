@@ -23,9 +23,42 @@
     <!--加入一个新的 navigation drarwer 的风格-->
     <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <!--將 spinBars 属性设定为 false-->
-        <item name="spinBars">true</item>
+        <item name="spinBars">false</item>
         <!--设定 drawer arrow 颜色-->
         <item name="color">@android:color/black</item>
     </style>
 
+    <style name="MyListView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_below">@id/flyt_title</item>
+        <item name="android:layout_above">@id/llyt_bottom</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:divider">#fafafa</item>
+    </style>
+    <!-- checkbox style for list -->
+    <style name="mycheckbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/ckbox_selecter</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:textSize">@dimen/third_font_size</item>
+    </style>
+    <!-- bottom button -->
+    <style name="bottom_button_style" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/second_font_size</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/btn_style</item>
+    </style>
+    <!-- GifMovieView use -->
+    <style name="Widget.GifMoviewView" parent="@android:style/Widget"></style>
 </resources>

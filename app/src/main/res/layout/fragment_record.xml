@@ -1,18 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
-    <!--toolbar 占位符-->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"></FrameLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="fragment1"
-        android:textColor="@android:color/holo_red_dark"/>
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/llyt_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周日"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周一"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周二"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周三"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周四"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周五"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="周六"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llyt_week"/>
+    <!--RecyclerView实现水平ListView-->
+    <!-- <android.support.v7.widget.RecyclerView
+         android:id="@+id/hlv_record"
+         android:layout_width="match_parent"
+         android:layout_height="150dp"
+         android:layout_below="@id/flyt_title"
+         android:scrollbars="horizontal"/>-->
+    <!---->
+    <!--<com.brainstorm.neckup.adapter.HListView
+        android:id="@+id/hlv_record"
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:layout_below="@id/flyt_title"
+        android:layout_centerHorizontal="true">
+    </com.brainstorm.neckup.adapter.HListView>-->
+
+    <!---->
+
+    <LinearLayout
+        android:id="@+id/llyt_recordInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flipper"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_am"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/exec_pm"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="上天入地"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
+
+        <TextView
+            android:id="@+id/tv_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/exec_pm"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="前后低头"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
+
+
+        <TextView
+            android:id="@+id/tv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/news"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="站在封口的暴风何时会躺下？"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
+
+        <TextView
+            android:id="@+id/tv_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/view"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="what did you 刚刚 say?"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
+
+        <TextView
+            android:id="@+id/tv_likeCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/like_num"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="12"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/third_font_size"/>
+    </LinearLayout>
+
+</RelativeLayout>

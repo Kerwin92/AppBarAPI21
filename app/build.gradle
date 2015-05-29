@@ -4,7 +4,7 @@ android {
     compileSdkVersion 21
     buildToolsVersion "20.0.0"
     defaultConfig {
-        applicationId 'com.example.appbar'
+        applicationId 'com.brainstorm.neckup'
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
@@ -22,4 +22,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.0'
     compile 'com.android.support:support-v4:22.1.1'
+    compile 'com.android.support:recyclerview-v7:21.0.0'
 }
